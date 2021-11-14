@@ -9,6 +9,7 @@
 .home-navbar{
     display: flex;
     font-size: 18px;
+    margin-bottom: 1.5rem;
 }
 
 .home-nav-list{
@@ -43,7 +44,7 @@
 .btn{
     padding: 8px 24px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .btn-primary {
@@ -52,4 +53,40 @@
     border-color: transparent;
     border: 1px solid transparent;
     border-radius: 0.25rem;
+}
+
+.home-box{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    background-color: #F6F5FC;
+    border-radius: 1.5rem;
+}
+
+.home-box h1{
+    font-size: 2.5rem;
+    color: #645F88;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.home-box p{
+    font-size: 1.2rem;
+    color: #8e8aad;
+    line-height: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.home-box button{
+    border-radius: 2rem;
+    font-size: 1.2rem;
+}
+
+.half{
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10% 3%;
 }
