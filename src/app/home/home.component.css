@@ -4,6 +4,7 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 5rem;
 }
 
 .home-navbar{
@@ -89,4 +90,65 @@
     justify-content: center;
     flex-direction: column;
     margin: 10% 3%;
+}
+
+.about-box{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.about-box span{
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #898798;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.about-box h2{
+    font-size: 2rem;
+    color: #645F88;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.about-box p{
+    color: #898798;
+    line-height: 1.5;
+}
+
+.card-box{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-box h5{
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #645F88 ;
+}
+
+.card-box p{
+    text-align: center;
+    color: #898798;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.card{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 3px 12px rgb(95 92 120 / 12%);
+    padding: 25px 25px;
+    border-radius: 8px;
 }
