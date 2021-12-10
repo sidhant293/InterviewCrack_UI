@@ -1,12 +1,12 @@
 <header id="home">
-    <nav class="home-navbar container">
+    <nav class="home-navbar container" >
         <h1 class="home-heading">Interview <span style="color: #6C55F9;">Crack</span></h1>
-        <button class="burger">
+        <button class="burger" (click)="burgerToogle=!burgerToogle">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
         </button>
-        <ul class="home-nav-list">
+        <ul [ngClass]="burgerToogle ? 'home-nav-list nav-list-collapse-resp':'home-nav-list'">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#service">Service</a></li>

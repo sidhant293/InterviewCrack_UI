@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: right;
+    transition: all 0.4s ease-out;
 }
 
 .burger{
@@ -218,7 +219,7 @@
     }
 
     .home-nav-list li{
-        padding: 25px 0px;
+        padding: 15px 0px;
     }
 
     .home-heading{
@@ -228,9 +229,21 @@
     .home-nav-list{
         flex-direction: column;
         align-items: flex-start;
+        margin-top: 1rem;
+        height: 12rem;
     }
 
     .burger{
         display: flex;
     }
+
+    .nav-list-collapse-resp{
+        opacity: 0;
+        height: 0px;
+        /* display: none; */
+        visibility: hidden;
+    }
+
+
+
 }
