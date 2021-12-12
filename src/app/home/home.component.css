@@ -14,12 +14,18 @@
     justify-content: space-between;
 }
 
+#home-img{
+    border-radius: 1.5rem;
+    width: 28rem;
+    height: 20rem;
+}
+
 .home-nav-list{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: right;
-    transition: all 0.4s ease-out;
+    transition: height 0.4s ease-out, opacity 0.8s ease;
 }
 
 .burger{
@@ -211,7 +217,14 @@
 
 /********************** MEDIA QUERIES ***************************/
 
+@media only screen and (max-width: 1200px){
+    #home-img{
+        width: 24rem;
+    }
+} 
+
 @media only screen and (max-width: 992px){
+    /* NAVBAR */
     .home-navbar{
         padding: 25px 30px;
         position: relative;
@@ -240,10 +253,48 @@
     .nav-list-collapse-resp{
         opacity: 0;
         height: 0px;
-        /* display: none; */
         visibility: hidden;
     }
 
+    /* HOME BOX */
 
+    #home-img{
+        height: 17rem;
+        width: 18rem;
+    }
 
+    /* CARDS */
+
+    .card-box{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card{
+        width: 15rem;
+        margin: 15px 0;
+    }
+
+}
+
+@media only screen and (max-width: 576px){
+    .home-box{
+        flex-direction: column-reverse;
+        padding: 1rem;
+    }
+
+    #home-img{
+        width: 16rem;
+        height: 15rem;
+    }
+
+    .half{
+        width: 100%;
+        align-items: center;
+    }
+
+    .container{
+        width: 90%;
+    }
 }
