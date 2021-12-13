@@ -276,6 +276,15 @@
         margin: 15px 0;
     }
 
+    .half{
+        width: 100%;
+        align-items: center;
+    }
+
+    .about-box{
+        flex-direction: column;
+    }
+
 }
 
 @media only screen and (max-width: 576px){
