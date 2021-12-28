@@ -287,9 +287,16 @@
 
 }
 
-@media only screen and (max-width: 576px){
+@media only screen and (max-width: 720px){
     .home-box{
         flex-direction: column-reverse;
+        padding: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 576px){
+
+    .home-box{
         padding: 1rem;
     }
 
@@ -304,6 +311,13 @@
     }
 
     .container{
-        width: 90%;
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 300px){
+    #home-img{
+        width: 14rem;
+        height: 13rem;
     }
 }
