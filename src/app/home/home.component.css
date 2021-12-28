@@ -311,11 +311,11 @@
     }
 
     .container{
-        width: 85%;
+        width: 80%;
     }
 }
 
-@media only screen and (max-width: 300px){
+@media only screen and (max-width: 330px){
     #home-img{
         width: 14rem;
         height: 13rem;
