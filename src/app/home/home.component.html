@@ -27,25 +27,25 @@
         </div>
     </div>
     <!-- <span style="display: flex; justify-content: center; align-items: center;" href="#about"> V </span>     -->
-    <a class="down-arrow-button" href="#about"><img class="down-arrow" src="../../assets/right-arrow.png"></a>
+    <a class="down-arrow-button" href="#about"><img class="down-arrow" [src]="imgSrc+'/right-arrow.png'"></a>
 </section>
 
 <section class="container">
     <div class="card-box">
         <div class="card">
-            <img src="../../assets/icon1.png" alt="icon" width="25%">
+            <img [src]="imgSrc+'/icon1.png'" alt="icon" width="25%">
             <h5>Heading 1</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia odio soluta atque iusto optio molestias nemo, numquam place</p>
             <button class="btn btn-primary">Read More</button>
         </div>
         <div class="card">
-            <img src="../../assets/icon2.png" alt="icon" width="25%">
+            <img [src]="imgSrc+'/icon2.png'" alt="icon" width="25%">
             <h5>Heading 2</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia odio soluta atque iusto optio molestias nemo, numquam place</p>
             <button class="btn btn-primary">Read More</button>
         </div>
         <div class="card">
-            <img src="../../assets/icon3.png" alt="icon" width="25%">
+            <img [src]="imgSrc+'/icon3.png'" alt="icon" width="25%">
             <h5>Heading 3</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia odio soluta atque iusto optio molestias nemo, numquam place</p>
             <button class="btn btn-primary">Read More</button>
@@ -62,7 +62,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, doloremque aspernatur. Nostrum, dicta odio amet ab illum nesciunt soluta</p>
         </div>
         <div class="half">
-            <img src="../../assets/about-img.jpg" alt="about-photo" width="80%" style="border-radius: 1.5rem;">
+            <img [src]="imgSrc+'/about-img.jpg'" alt="about-photo" width="80%" style="border-radius: 1.5rem;">
         </div>
     </div>
 </section>
