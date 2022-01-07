@@ -51,3 +51,39 @@ table {
 html {
 	scroll-behavior: smooth;
   }
+
+
+:root {
+    --primary-color: #6C55F9;
+    --secondary-color: #645F88;
+    --tertiary-color: #898798;
+}
+
+.btn{
+    padding: 8px 24px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--primary-color);
+    border-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition:  background-color 0.15s ease-in-out;
+}
+
+.btn-primary:hover{
+    background-color: var(--secondary-color);
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 3px 12px rgb(95 92 120 / 12%);
+    padding: 25px 25px;
+    border-radius: 8px;
+}

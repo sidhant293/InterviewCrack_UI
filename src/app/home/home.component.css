@@ -67,30 +67,12 @@
 
 .home-nav-list li a{
     text-decoration: none;
-    color: rgb(98 90 159 / 75%);
+    /* color: rgb(98 90 159 / 75%); */
+    color: var(--tertiary-color);
 }
 
 .home-nav-list li a:hover{
-    color: #645F88
-}
-
-.btn{
-    padding: 8px 24px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.btn-primary {
-    color: #fff;
-    background-color: #6C55F9;
-    border-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    transition:  background-color 0.15s ease-in-out;
-}
-
-.btn-primary:hover{
-    background-color: #645F88;
+    color: var(--secondary-color)
 }
 
 .home-box{
@@ -103,7 +85,7 @@
 
 .home-box h1{
     font-size: 2.5rem;
-    color: #645F88;
+    color: var(--secondary-color);
     font-weight: 500;
     margin-bottom: 2rem;
 }
@@ -139,21 +121,21 @@
     display: block;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: #898798;
+    color: var(--tertiary-color);
     font-weight: 500;
     margin-bottom: 8px;
 }
 
 .about-box h2{
     font-size: 2rem;
-    color: #645F88;
+    color: var(--secondary-color);
     margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
 }
 
 .about-box p{
-    color: #898798;
+    color: var(--tertiary-color);
     line-height: 1.5;
 }
 
@@ -168,26 +150,19 @@
     margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
-    color: #645F88 ;
+    color: var(--secondary-color) ;
 }
 
 .card-box p{
     text-align: center;
-    color: #898798;
+    color: var(--tertiary-color);
     margin-bottom: 1rem;
     font-size: 1rem;
     line-height: 1.5;
 }
 
-.card{
+.card-width{
     width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: 0 3px 12px rgb(95 92 120 / 12%);
-    padding: 25px 25px;
-    border-radius: 8px;
 }
 
 .down-arrow{
@@ -212,7 +187,7 @@
 }
 
 .down-arrow-button:hover{
-    background-color: #6C55F9;
+    background-color: var(--primary-color);
 }
 
 /********************** MEDIA QUERIES ***************************/

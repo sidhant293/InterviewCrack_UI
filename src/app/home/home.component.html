@@ -1,6 +1,6 @@
 <header id="home">
     <nav class="home-navbar container" >
-        <h1 class="home-heading">Interview <span style="color: #6C55F9;">Crack</span></h1>
+        <h1 class="home-heading">Interview <span style="color: var(--primary-color);">Crack</span></h1>
         <button class="burger" (click)="burgerToogle=!burgerToogle">
             <div class="line"></div>
             <div class="line"></div>
@@ -10,7 +10,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#service">Service</a></li>
-            <button class="btn btn-primary">Sign In</button>
+            <button class="btn btn-primary" routerLink="/login">Sign In</button>
         </ul>
     </nav>
 </header>
@@ -20,7 +20,7 @@
         <div class="half">
             <h1>Let's Help You to Crack those Interviews!</h1>
             <p>Practise the most asked interview problems with our newly designed techniques</p>
-            <button class="btn btn-primary">Let's Start</button>
+            <button class="btn btn-primary" routerLink="/signup">Create Account</button>
         </div>
         <div class="half">
             <img id="home-img" [src]="imgSrc+'/interview.jpg'" alt="interview-photo"> 
@@ -32,19 +32,19 @@
 
 <section class="container">
     <div class="card-box">
-        <div class="card">
+        <div class="card card-width">
             <img [src]="imgSrc+'/icon1.png'" alt="icon" width="25%">
             <h5>Heading 1</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia odio soluta atque iusto optio molestias nemo, numquam place</p>
             <button class="btn btn-primary">Read More</button>
         </div>
-        <div class="card">
+        <div class="card card-width">
             <img [src]="imgSrc+'/icon2.png'" alt="icon" width="25%">
             <h5>Heading 2</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia odio soluta atque iusto optio molestias nemo, numquam place</p>
             <button class="btn btn-primary">Read More</button>
         </div>
-        <div class="card">
+        <div class="card card-width">
             <img [src]="imgSrc+'/icon3.png'" alt="icon" width="25%">
             <h5>Heading 3</h5>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia odio soluta atque iusto optio molestias nemo, numquam place</p>
