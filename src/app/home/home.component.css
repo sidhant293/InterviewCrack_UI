@@ -187,7 +187,7 @@
 }
 
 .down-arrow-button:hover{
-    background-color: var(--primary-color);
+    background-color: var(--tertiary-color);
 }
 
 /********************** MEDIA QUERIES ***************************/
