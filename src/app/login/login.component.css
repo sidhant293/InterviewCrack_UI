@@ -58,6 +58,15 @@
   margin-top: 1rem;
 }
 
+.error-message{
+  margin-top: 2rem;
+  color: red;
+}
+
+.preloader{
+  margin-top: 2rem;
+}
+
 @media only screen and (max-width: 425px){
   .custom-card{
     padding: 1.5rem;

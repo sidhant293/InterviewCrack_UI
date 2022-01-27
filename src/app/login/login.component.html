@@ -3,13 +3,17 @@
 
     <div class="card custom-card" *ngIf="cardActive==='signIn'">
         <h3 class="heading">Sign In</h3>
-        <input placeholder="Username or Email" class="input-field">
-        <input placeholder="Password" type="password" class="input-field">
-        <button class="btn btn-primary btn-custom">Sign In</button>
+        <form [formGroup]="loginForm" (ngSubmit)="onSignIn()"> 
+            <input placeholder="Username or Email" class="input-field" formControlName="username">
+            <input placeholder="Password" type="password" class="input-field" formControlName="password">
+            <button class="btn btn-primary btn-custom">Sign In</button>
+        </form>
         <div class="form-last-line">
             <p (click)="cardActive='forgotPass'">Forgot Password?</p>
             <p (click)="cardActive='signUp'">Sign Up</p>
         </div>
+        <p class="error-message" *ngIf="error.length>0">{{error}}</p>
+        <img [src]="imgSrc+'/preloader.gif'" class="preloader" *ngIf="preloader">
     </div>
     
     <div class="card custom-card" *ngIf="cardActive==='signUp'">
@@ -23,6 +27,8 @@
             <p (click)="cardActive='forgotPass'">Forgot Password?</p>
             <p (click)="cardActive='signIn'">Sign In</p>
         </div>
+        <p class="error-message" *ngIf="error.length>0">{{error}}</p>
+        <img [src]="imgSrc+'/preloader.gif'" class="preloader" *ngIf="preloader">
     </div>
 
     <div class="card custom-card" *ngIf="cardActive==='forgotPass'">

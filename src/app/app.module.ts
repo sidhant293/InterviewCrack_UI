@@ -6,6 +6,19 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
+import Amplify from 'aws-amplify';
+import {cognito} from './aws-exports/cognito';
+import { ReactiveFormsModule } from '@angular/forms';
+
+Amplify.configure({
+  Auth:{
+    madatorySignId:true,
+    region:cognito.REGION,
+    userPoolId:cognito.USER_POOL_ID,
+    userPoolWebClientId:cognito.APP_CLIENT_ID
+  }
+});
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +27,8 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
