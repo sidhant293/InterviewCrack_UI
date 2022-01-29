@@ -18,11 +18,13 @@
     
     <div class="card custom-card" *ngIf="cardActive==='signUp'">
         <h3 class="heading">Sign Up</h3>
-        <input placeholder="Username" class="input-field">
-        <input placeholder="Email" class="input-field">
-        <input placeholder="Password" type="password" class="input-field">
-        <input placeholder="Confirm Password" type="password" class="input-field">
-        <button class="btn btn-primary btn-custom">Sign Up</button>
+        <form [formGroup]="registerForm" (ngSubmit)="onSignUp()">
+            <input placeholder="Username" class="input-field" formControlName="username">
+            <input placeholder="Email" class="input-field" formControlName="email">
+            <input placeholder="Password" type="password" class="input-field" formControlName="password">
+            <input placeholder="Confirm Password" type="password" class="input-field" formControlName="confirmPassword">
+            <button class="btn btn-primary btn-custom">Sign Up</button>
+        </form>
         <div class="form-last-line">
             <p (click)="cardActive='forgotPass'">Forgot Password?</p>
             <p (click)="cardActive='signIn'">Sign In</p>
@@ -35,6 +37,15 @@
         <h3 class="heading">Reset Password</h3>
         <input placeholder="Email" class="input-field">
         <button class="btn btn-primary btn-custom">Reset</button>
+    </div>
+
+    <div class="card custom-card" *ngIf="cardActive==='verify'">
+        <h3 class="heading">Verify Email</h3>
+        <p>A verification link has been sent to your email. Click on the link to verify email and then login again</p>
+        <div class="form-last-line">
+            <p (click)="cardActive='forgotPass'">Forgot Password?</p>
+            <p (click)="cardActive='signIn'">Sign In</p>
+        </div>
     </div>
 
 </div>
