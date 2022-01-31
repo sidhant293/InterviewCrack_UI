@@ -7,10 +7,12 @@
             <div class="line"></div>
         </button>
         <ul [ngClass]="burgerToogle ? 'home-nav-list nav-list-collapse-resp':'home-nav-list'">
-            <li><a href="#home">Home</a></li>
+            <li><a routerLink="/problemset">Explore</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#service">Service</a></li>
-            <button class="btn btn-primary" routerLink="/login">Sign In</button>
+            <!-- only one button displayed -->
+            <button *ngIf="!loggedIn" class="btn btn-primary" routerLink="/login">Sign In</button>
+            <button (click)="onSignOut()" *ngIf="loggedIn" class="btn btn-primary">Sign Out</button>
         </ul>
     </nav>
 </header>
@@ -20,13 +22,14 @@
         <div class="half">
             <h1>Let's Help You to Crack those Interviews!</h1>
             <p>Practise the most asked interview problems with our newly designed techniques</p>
-            <button class="btn btn-primary" routerLink="/signup">Let's Start</button>
+            <!-- only one button displayed -->
+            <button *ngIf="!loggedIn" class="btn btn-primary" routerLink="/signup">Let's Start</button>
+            <button *ngIf="loggedIn" class="btn btn-primary" routerLink="/problemset">Let's Explore</button>
         </div>
         <div class="half">
             <img id="home-img" [src]="imgSrc+'/interview.jpg'" alt="interview-photo"> 
         </div>
     </div>
-    <!-- <span style="display: flex; justify-content: center; align-items: center;" href="#about"> V </span>     -->
     <a class="down-arrow-button" href="#about"><img class="down-arrow" [src]="imgSrc+'/right-arrow.png'"></a>
 </section>
 

@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import Amplify from 'aws-amplify';
 import {cognito} from './aws-exports/cognito';
 import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 Amplify.configure({
   Auth:{
@@ -28,7 +29,8 @@ Amplify.configure({
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
