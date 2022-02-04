@@ -35,6 +35,8 @@
   color: var(--secondary-color);
 }
 
+
+
 .custom-card{
   margin-top: 2rem;
   padding: 2rem;
@@ -45,12 +47,28 @@
 .input-field{
   width: 100%;
   font-size: 14px;
-  margin: 0.5rem;
+  margin: 0.5rem 0rem;
   padding: 8.85px 13px;
   box-sizing: border-box;
   border: 1px solid #cfd8dc;
   border-radius: 3px;
   font-weight: 300;
+}
+
+.social-login-heading{
+  color: var(--tertiary-color);
+  margin-top: 2rem;
+}
+
+.social-login-buttons{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.google-signin{
+  width: 2rem;
+  cursor: pointer;
 }
 
 .btn-custom{

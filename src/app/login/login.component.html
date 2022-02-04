@@ -1,6 +1,7 @@
 <div class="component-container">
     <h1 class="home-heading">Interview <span style="color: var(--primary-color)">Crack</span></h1>
 
+    <!-- SIGN IN -->
     <div class="card custom-card" *ngIf="cardActive==='signIn'">
         <h3 class="heading">Sign In</h3>
         <form [formGroup]="loginForm" (ngSubmit)="onSignIn()"> 
@@ -9,13 +10,20 @@
             <button class="btn btn-primary btn-custom">Sign In</button>
         </form>
         <div class="form-last-line">
-            <p (click)="cardActive='forgotPass'">Forgot Password?</p>
+            <p (click)="cardActive='forgotPass'">Forgot Password</p>
             <p (click)="cardActive='signUp'">Sign Up</p>
         </div>
+
+        <p class="social-login-heading">or you can sign in with</p>
+        <div class="social-login-buttons">
+            <img (click)="onSocialLogin()" class="google-signin" [src]="imgSrc+'/google_signin.png'">
+        </div>
+
         <p class="error-message" *ngIf="error.length>0">{{error}}</p>
         <img [src]="imgSrc+'/preloader.gif'" class="preloader" *ngIf="preloader">
     </div>
     
+    <!-- SIGN UP -->
     <div class="card custom-card" *ngIf="cardActive==='signUp'">
         <h3 class="heading">Sign Up</h3>
         <form [formGroup]="registerForm" (ngSubmit)="onSignUp()">
@@ -26,28 +34,70 @@
             <button class="btn btn-primary btn-custom">Sign Up</button>
         </form>
         <div class="form-last-line">
-            <p (click)="cardActive='forgotPass'">Forgot Password?</p>
+            <p (click)="cardActive='forgotPass'">Forgot Password</p>
             <p (click)="cardActive='signIn'">Sign In</p>
         </div>
+
+        <p class="social-login-heading">or you can sign in with</p>
+        <div class="social-login-buttons">
+            <img (click)="onSocialLogin()" class="google-signin" [src]="imgSrc+'/google_signin.png'">
+        </div>
+
         <p class="error-message" *ngIf="error.length>0">{{error}}</p>
         <img [src]="imgSrc+'/preloader.gif'" class="preloader" *ngIf="preloader">
     </div>
 
+    <!-- RESET PASSWORD -->
     <div class="card custom-card" *ngIf="cardActive==='forgotPass'">
         <h3 class="heading">Reset Password</h3>
-        <input placeholder="Email" class="input-field">
-        <button class="btn btn-primary btn-custom">Reset</button>
+        <form [formGroup]="forgotPasswordForm" (ngSubmit)="onForgotPassword()">
+            <input placeholder="Email or Username" class="input-field" formControlName="email">
+            <button class="btn btn-primary btn-custom">Reset</button>
+        </form>
+        <div class="form-last-line">
+            <p (click)="cardActive='signUp'">Sign Up</p>
+            <p (click)="cardActive='signIn'">Sign In</p>
+        </div>
+
+        <p class="error-message" *ngIf="error.length>0">{{error}}</p>
+        <img [src]="imgSrc+'/preloader.gif'" class="preloader" *ngIf="preloader">
     </div>
 
+    <!-- VERIFY NEW PASSWORD -->
+    <div class="card custom-card" *ngIf="cardActive==='passVerify'">
+        <h3 class="heading">Set new password</h3>
+        <form [formGroup]="verifyPasswordForm" (ngSubmit)="onVerifyPassword()">
+            <input placeholder="Verification code" class="input-field" formControlName="code">
+            <input placeholder="Email or Username" class="input-field" formControlName="email">
+            <input placeholder="Password" type="password" class="input-field" formControlName="password">
+            <input placeholder="Confirm Password" type="password" class="input-field" formControlName="confirmPassword">
+            <button class="btn btn-primary btn-custom">Submit</button>
+        </form>
+
+        <div class="form-last-line">
+            <p (click)="cardActive='forgotPass'">Request Code</p>
+        </div>
+
+        <p class="error-message" *ngIf="error.length>0">{{error}}</p>
+        <img [src]="imgSrc+'/preloader.gif'" class="preloader" *ngIf="preloader">
+    </div>
+
+    <!-- VERIFY SUCCESS -->
+    <div class="card custom-card" *ngIf="cardActive==='successVerify'">
+        <h3 class="heading">Success</h3>
+        <p>Your password has been successfully updated</p>
+        <button class="btn btn-primary btn-custom" (click)="cardActive='signIn'">Login</button>
+    </div>
+
+    <!-- VERIFY EMAIL -->
     <div class="card custom-card" *ngIf="cardActive==='verify'">
         <h3 class="heading">Verify Email</h3>
         <p>A verification link has been sent to your email. Click on the link to verify email and then login again</p>
         <div class="form-last-line">
-            <p (click)="cardActive='forgotPass'">Forgot Password?</p>
+            <p (click)="cardActive='forgotPass'">Forgot Password</p>
             <p (click)="cardActive='signIn'">Sign In</p>
         </div>
     </div>
-
 </div>
 
 

@@ -16,7 +16,8 @@ Amplify.configure({
     madatorySignId:true,
     region:cognito.REGION,
     userPoolId:cognito.USER_POOL_ID,
-    userPoolWebClientId:cognito.APP_CLIENT_ID
+    userPoolWebClientId:cognito.APP_CLIENT_ID,
+    oauth:cognito.oauth
   }
 });
 
