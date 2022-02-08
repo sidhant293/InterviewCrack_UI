@@ -15,7 +15,7 @@
             <div *ngIf="loggedIn" class="profile-container">
                 <img [src]="imgSrc+'/profile-icon.png'" alt="profile icon" id="profile-icon" (click)="profileMenuToogle=!profileMenuToogle">
                 <div [ngClass]="profileMenuToogle? 'profile-menu profile-menu-collapse':'profile-menu'" >
-                    <h5>{{username}}</h5>
+                    <h5>{{username.length>0 ? username : 'Hi!!'}</h5>
                     <a routerLink="/profile">Profile</a>
                     <a (click)="onSignOut()">Logout</a>
                 </div>

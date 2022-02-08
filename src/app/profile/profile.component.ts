@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     Auth.currentAuthenticatedUser()
     .then(res=> {
-      this.email=res.attributes.email;
+      this.email=res.attributes!=undefined ? res.attributes.email : '';
       this.username=res.username;
       this.loggedInUser=res;
     })

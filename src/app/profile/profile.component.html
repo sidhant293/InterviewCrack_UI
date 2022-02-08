@@ -2,7 +2,7 @@
     <div class="card custom-card" >
         <h3 class="heading">Profile</h3>
         <img [src]="imgSrc+'/profile-icon.png'" alt="profile icon" id="profile-icon">
-        <p class="user-data">Email: {{email}}</p>
+        <p *ngIf="email.length>0" class="user-data">Email: {{email}}</p>
         <p class="user-data">Username: {{username}}</p>
 
         <button *ngIf="!changePasswordActive" class="btn btn-primary btn-custom" (click)="changePasswordActive=true">Change Password</button>

@@ -25,11 +25,18 @@ export class HomeComponent implements OnInit {
     Auth.currentAuthenticatedUser()
     .then(res=> {
       this.loggedIn=true;
-      const name=res.attributes.email;
-      const indx=name.indexOf("@");
-      this.username=name.slice(0,indx);
+      if(res.attributes!=undefined){
+        const name=res.attributes.email;
+        const indx=name.indexOf("@");
+        this.username=name.slice(0,indx);
+      }
+      console.log("HOME",res);      
     })
-    .catch(err=>this.loggedIn=false);
+    .catch(err=>{
+      this.loggedIn=false;
+      console.log("HOME ERR",err);
+    })
+    .finally(()=>console.log("HOME FINALLY ",this.loggedIn,this.username));
   }
 
   onSignOut(){
