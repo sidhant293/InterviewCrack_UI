@@ -12,14 +12,24 @@ export class HomeComponent implements OnInit {
   burgerToogle:boolean;
   imgSrc:string;
   loggedIn:boolean=false;
+  profileMenuToogle:boolean;
+  username:string="";
 
   constructor() { 
     this.burgerToogle=true;
+    this.profileMenuToogle=true;
     this.imgSrc=environment.imgLocation;
   }
 
   ngOnInit(): void {
-    Auth.currentAuthenticatedUser().then(res=> this.loggedIn=true).catch(err=>this.loggedIn=false);
+    Auth.currentAuthenticatedUser()
+    .then(res=> {
+      this.loggedIn=true;
+      const name=res.attributes.email;
+      const indx=name.indexOf("@");
+      this.username=name.slice(0,indx);
+    })
+    .catch(err=>this.loggedIn=false);
   }
 
   onSignOut(){

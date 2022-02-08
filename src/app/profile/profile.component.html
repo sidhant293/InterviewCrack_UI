@@ -1,0 +1,22 @@
+<div class="component-container">
+    <div class="card custom-card" >
+        <h3 class="heading">Profile</h3>
+        <img [src]="imgSrc+'/profile-icon.png'" alt="profile icon" id="profile-icon">
+        <p class="user-data">Email: {{email}}</p>
+        <p class="user-data">Username: {{username}}</p>
+
+        <button *ngIf="!changePasswordActive" class="btn btn-primary btn-custom" (click)="changePasswordActive=true">Change Password</button>
+        <form *ngIf="changePasswordActive" class="form" [formGroup]="passwordChangeForm" (ngSubmit)="onPasswordChange()">
+            <input placeholder="Old Password" type="password" class="input-field" formControlName="oldPassword">
+            <input placeholder="New Password" type="password" class="input-field" formControlName="password">
+            <input placeholder="Confirm Password" type="password" class="input-field" formControlName="confirmPassword">
+            <button class="btn btn-primary btn-custom">Change Password</button>
+        </form>
+        
+        <p class="error-message" *ngIf="error.length>0">{{error}}</p>
+        <p class="success-message" *ngIf="successMessage.length>0">{{successMessage}}</p>
+        <img [src]="imgSrc+'/preloader.gif'" class="preloader" *ngIf="preloader">
+    </div>
+</div>
+
+

@@ -1,0 +1,91 @@
+
+.component-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to right top, #ada996, #c2b4a8, #d0c0bc, #dacfd0, #e3dee1, #e7e4e7, #ebeaec, #f0f0f0, #eeefee, #ededed, #ebeceb, #eaeaea);
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+  }
+
+  .heading{
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  
+  .custom-card{
+    margin-top: 8rem;
+    padding: 2rem;
+    background-color: white;
+    width: 20rem;
+  }
+
+  .user-data{
+      margin-top: 1rem;
+      color: var(--secondary-color);
+      font-size: large;
+      font-weight: 600;
+  }
+
+  .form{
+      margin-top: 1rem;
+  }
+
+  .input-field{
+    width: 100%;
+    font-size: 14px;
+    margin: 0.5rem 0rem;
+    padding: 8.85px 13px;
+    box-sizing: border-box;
+    border: 1px solid #cfd8dc;
+    border-radius: 3px;
+    font-weight: 300;
+  }
+ 
+  #profile-icon{
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+  }
+  
+  .btn-custom{
+    margin-top: 1rem;
+  }
+  
+  .error-message{
+    margin-top: 2rem;
+    color: red;
+  }
+
+  .success-message{
+    margin-top: 2rem;
+    color: green;
+  }
+  
+  .preloader{
+    margin-top: 2rem;
+  }
+  
+  @media only screen and (max-width: 425px){
+    .custom-card{
+      padding: 1.5rem;
+      width: 18rem;
+    }
+  }
+  
+  @media only screen and (max-width: 375px){
+    .custom-card{
+      width: 15rem;
+    }
+  }
+  
+  @media only screen and (max-width: 310px){
+    .custom-card{
+      width: 13rem;
+    }
+  }

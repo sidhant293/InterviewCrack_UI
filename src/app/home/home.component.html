@@ -12,7 +12,14 @@
             <li><a href="#service">Service</a></li>
             <!-- only one button displayed -->
             <button *ngIf="!loggedIn" class="btn btn-primary" routerLink="/login">Sign In</button>
-            <button (click)="onSignOut()" *ngIf="loggedIn" class="btn btn-primary">Sign Out</button>
+            <div *ngIf="loggedIn" class="profile-container">
+                <img [src]="imgSrc+'/profile-icon.png'" alt="profile icon" id="profile-icon" (click)="profileMenuToogle=!profileMenuToogle">
+                <div [ngClass]="profileMenuToogle? 'profile-menu profile-menu-collapse':'profile-menu'" >
+                    <h5>{{username}}</h5>
+                    <a routerLink="/profile">Profile</a>
+                    <a (click)="onSignOut()">Logout</a>
+                </div>
+            </div>
         </ul>
     </nav>
 </header>
