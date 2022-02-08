@@ -4,8 +4,8 @@
         <img [src]="imgSrc+'/profile-icon.png'" alt="profile icon" id="profile-icon">
         <p *ngIf="email.length>0" class="user-data">Email: {{email}}</p>
         <p class="user-data">Username: {{username}}</p>
-
-        <button *ngIf="!changePasswordActive" class="btn btn-primary btn-custom" (click)="changePasswordActive=true">Change Password</button>
+<!-- user should not be a federated one -->
+        <button *ngIf="!changePasswordActive && !isFederatedUser" class="btn btn-primary btn-custom" (click)="changePasswordActive=true">Change Password</button>
         <form *ngIf="changePasswordActive" class="form" [formGroup]="passwordChangeForm" (ngSubmit)="onPasswordChange()">
             <input placeholder="Old Password" type="password" class="input-field" formControlName="oldPassword">
             <input placeholder="New Password" type="password" class="input-field" formControlName="password">

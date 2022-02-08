@@ -17,6 +17,8 @@ export class ProfileComponent implements OnInit {
   successMessage:string="";
   // to active password change form fields
   changePasswordActive:boolean;
+  //to check if user is a fedrated one
+  isFederatedUser:boolean;
   preloader:boolean;
 
   passwordChangeForm:FormGroup;
@@ -26,6 +28,7 @@ export class ProfileComponent implements OnInit {
     this.imgSrc=environment.imgLocation;
     this.changePasswordActive=false;
     this.preloader=false;
+    this.isFederatedUser=false;
     //password regex expression
     const passwordValidator='(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>"\'\\;:\{\\\}\\\[\\\]\\\|\\\+\\\-\\\=\\\_\\\)\\\(\\\)\\\`\\\/\\\\\\]])[A-Za-z0-9\d$@].{8,}';
 
@@ -39,9 +42,10 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     Auth.currentAuthenticatedUser()
     .then(res=> {
-      this.email=res.attributes!=undefined ? res.attributes.email : '';
+      this.email=res.signInUserSession.idToken.payload.email;
       this.username=res.username;
       this.loggedInUser=res;
+      if(res.attributes==undefined) this.isFederatedUser=true;
     })
     .catch(err=>this.error=err.message);
   }

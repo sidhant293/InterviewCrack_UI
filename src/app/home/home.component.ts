@@ -25,11 +25,9 @@ export class HomeComponent implements OnInit {
     Auth.currentAuthenticatedUser()
     .then(res=> {
       this.loggedIn=true;
-      if(res.attributes!=undefined){
-        const name=res.attributes.email;
-        const indx=name.indexOf("@");
-        this.username=name.slice(0,indx);
-      }
+      const name=res.signInUserSession.idToken.payload.email;
+      const indx=name.indexOf("@");
+      this.username=name.slice(0,indx);
       console.log("HOME",res);      
     })
     .catch(err=>{
