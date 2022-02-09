@@ -282,7 +282,7 @@
     .profile-menu{
         left: 5rem;
         top: -2rem;
-        width: 10rem;
+        width: fit-content;
     }
 
     /* HOME BOX */

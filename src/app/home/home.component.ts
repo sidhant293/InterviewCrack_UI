@@ -14,14 +14,17 @@ export class HomeComponent implements OnInit {
   loggedIn:boolean=false;
   profileMenuToogle:boolean;
   username:string="";
+  preloader:boolean;
 
   constructor() { 
     this.burgerToogle=true;
     this.profileMenuToogle=true;
     this.imgSrc=environment.imgLocation;
+    this.preloader=false;
   }
 
   ngOnInit(): void {
+    this.preloader=true;
     Auth.currentAuthenticatedUser()
     .then(res=> {
       this.loggedIn=true;
@@ -34,14 +37,19 @@ export class HomeComponent implements OnInit {
       this.loggedIn=false;
       console.log("HOME ERR",err);
     })
-    .finally(()=>console.log("HOME FINALLY ",this.loggedIn,this.username));
+    .finally(()=>{
+      console.log("HOME FINALLY ",this.loggedIn,this.username);
+      this.preloader=false;
+    });
   }
 
   onSignOut(){
+    this.preloader=true;
     Auth.signOut().then(res=> {
       console.log("signout successfull",res);
       this.loggedIn=false;
-    }).catch(err=>console.log("signout error",err));
+    }).catch(err=>console.log("signout error",err))
+    .finally(()=>this.preloader=false);
   }
 
 }

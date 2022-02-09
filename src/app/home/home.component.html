@@ -11,15 +11,19 @@
             <li><a href="#about">About</a></li>
             <li><a href="#service">Service</a></li>
             <!-- only one button displayed -->
-            <button *ngIf="!loggedIn" class="btn btn-primary" routerLink="/login">Sign In</button>
-            <div *ngIf="loggedIn" class="profile-container">
-                <img [src]="imgSrc+'/profile-icon.png'" alt="profile icon" id="profile-icon" (click)="profileMenuToogle=!profileMenuToogle">
-                <div [ngClass]="profileMenuToogle? 'profile-menu profile-menu-collapse':'profile-menu'" >
-                    <h5>{{username}}</h5>
-                    <a routerLink="/profile">Profile</a>
-                    <a (click)="onSignOut()">Logout</a>
+            
+            <img [src]="imgSrc+'/preloader.gif'" class="preloader" *ngIf="preloader==true; else showSignIn">
+            <ng-template #showSignIn>
+                <button *ngIf="!loggedIn" class="btn btn-primary" routerLink="/login">Sign In</button>
+                <div *ngIf="loggedIn" class="profile-container">
+                    <img [src]="imgSrc+'/profile-icon.png'" alt="profile icon" id="profile-icon" (click)="profileMenuToogle=!profileMenuToogle">
+                    <div [ngClass]="profileMenuToogle? 'profile-menu profile-menu-collapse':'profile-menu'" >
+                        <h5>{{username}}</h5>
+                        <a routerLink="/profile">Profile</a>
+                        <a (click)="onSignOut()">Logout</a>
+                    </div>
                 </div>
-            </div>
+            </ng-template>            
         </ul>
     </nav>
 </header>
@@ -30,8 +34,11 @@
             <h1>Let's Help You to Crack those Interviews!</h1>
             <p>Practise the most asked interview problems with our newly designed techniques</p>
             <!-- only one button displayed -->
-            <button *ngIf="!loggedIn" class="btn btn-primary" routerLink="/signup">Let's Start</button>
-            <button *ngIf="loggedIn" class="btn btn-primary" routerLink="/problemset">Let's Explore</button>
+            <img [src]="imgSrc+'/preloader.gif'" class="preloader" *ngIf="preloader==true; else showButton">
+            <ng-template #showButton>
+                <button *ngIf="!loggedIn" class="btn btn-primary" routerLink="/signup">Let's Start</button>
+                <button *ngIf="loggedIn" class="btn btn-primary" routerLink="/problemset">Let's Explore</button>
+            </ng-template>
         </div>
         <div class="half">
             <img id="home-img" [src]="imgSrc+'/interview.jpg'" alt="interview-photo"> 
