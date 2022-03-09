@@ -1,0 +1,27 @@
+<nav class="navbar app-container" >
+    <h1 class="navbar-heading">Interview <span style="color: var(--primary-color);">Crack</span></h1>
+    <button class="burger" (click)="burgerToogle=!burgerToogle">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </button>
+    <ul [ngClass]="burgerToogle ? 'navbar-list nav-list-collapse-resp':'navbar-list'">
+        <li><a routerLink="/problemset">Problems</a></li>
+        <li><a>Submissions</a></li>
+        <!-- only one button displayed -->          
+    </ul>
+    <div [ngClass]="burgerToogle ? 'profile-button nav-list-collapse-resp':'profile-button'">
+        <img [src]="imgSrc+'/preloader.gif'" class="preloader" *ngIf="preloader==true; else showSignIn">
+        <ng-template #showSignIn>
+            <button *ngIf="!loggedIn" class="btn btn-primary" routerLink="/login">Sign In</button>
+            <div *ngIf="loggedIn" class="profile-container">
+                <img [src]="imgSrc+'/profile-icon.png'" alt="profile icon" id="profile-icon" (click)="profileMenuToogle=!profileMenuToogle">
+                <div [ngClass]="profileMenuToogle? 'profile-menu profile-menu-collapse':'profile-menu'" >
+                    <h5>{{username}}</h5>
+                    <a routerLink="/profile">Profile</a>
+                    <a (click)="onSignOut()">Logout</a>
+                </div>
+            </div>
+        </ng-template> 
+    </div>
+</nav>
